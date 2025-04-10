@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": "src",
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"module": "commonjs",
+		"moduleResolution": "Node",
+		"outDir": "dist",
+		"paths": { "@/*": ["./*"] },
+		"plugins": [
+			{ "transform": "typescript-transform-paths" },
+			{
+				"transform": "typescript-transform-paths",
+				"afterDeclarations": true
+			}
+		],
+		"strict": true,
+		"target": "ESNext"
+	},
+	"include": ["src/**/*"]
+}
