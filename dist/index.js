@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 require("dotenv").config();
+const mongodb_1 = require("mongodb");
 const mongoose_1 = __importDefault(require("mongoose"));
 const app_1 = __importDefault(require("./app"));
 const users_1 = __importDefault(require("./routes/users"));
@@ -14,7 +15,7 @@ const connect = async () => {
     try {
         await mongoose_1.default.connect(uri, {
             serverApi: {
-                version: "1",
+                version: mongodb_1.ServerApiVersion.v1,
                 strict: true,
                 deprecationErrors: true,
             },

@@ -66,13 +66,6 @@ If you want to create this project on your own, do the following steps:
     }
     ```
 
-5. Finally, add your own environment variables in `.env` file.
-
-    ```env
-    DB_URI="your mongodb_uri"
-    TOKEN_SECRET="your token secret for generating access token"
-    ```
-
 If you don't know how to generate a random string to use as a token secret, try this in the terminal:
 
 ```bash

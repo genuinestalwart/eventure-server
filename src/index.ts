@@ -1,4 +1,5 @@
 require("dotenv").config();
+import { ServerApiVersion } from "mongodb";
 import mongoose from "mongoose";
 import app from "@/app";
 import userRoutes from "@/routes/users";
@@ -10,7 +11,7 @@ const connect = async () => {
 	try {
 		await mongoose.connect(uri, {
 			serverApi: {
-				version: "1",
+				version: ServerApiVersion.v1,
 				strict: true,
 				deprecationErrors: true,
 			},
