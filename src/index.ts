@@ -5,7 +5,7 @@ import app from "@/app";
 import userRoutes from "@/routes/users";
 import authRoutes from "@/routes/auth";
 const port = process.env.PORT || 5000;
-const uri = process.env.DB_URI || "";
+const uri = process.env.MONGODB_URI || "";
 
 const connect = async () => {
 	try {

@@ -10,7 +10,7 @@ const app_1 = __importDefault(require("./app"));
 const users_1 = __importDefault(require("./routes/users"));
 const auth_1 = __importDefault(require("./routes/auth"));
 const port = process.env.PORT || 5000;
-const uri = process.env.DB_URI || "";
+const uri = process.env.MONGODB_URI || "";
 const connect = async () => {
     try {
         await mongoose_1.default.connect(uri, {
