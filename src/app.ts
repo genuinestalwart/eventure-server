@@ -10,7 +10,7 @@ app.use(
 			"https://gs-eventure.vercel.app",
 			"*",
 		],
-		methods: "GET,POST,PUT,DELETE,OPTIONS",
+		methods: "GET,POST,PUT,PATCH,DELETE,OPTIONS",
 		credentials: true,
 	})
 );

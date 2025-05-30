@@ -13,7 +13,7 @@ app.use((0, cors_1.default)({
         "https://gs-eventure.vercel.app",
         "*",
     ],
-    methods: "GET,POST,PUT,DELETE,OPTIONS",
+    methods: "GET,POST,PUT,PATCH,DELETE,OPTIONS",
     credentials: true,
 }));
 app.use(express_1.default.json());
