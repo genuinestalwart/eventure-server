@@ -1,0 +1,22 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const events_1 = require("../controllers/events");
+const storageFull_1 = require("../middlewares/storageFull");
+const verifyToken_1 = require("../middlewares/verifyToken");
+const express_1 = __importDefault(require("express"));
+const eventRoutes = express_1.default.Router();
+eventRoutes.get("/event/:eid", events_1.getEvent);
+eventRoutes.get("/events/:uid/created", verifyToken_1.verifyToken, events_1.getMyEvents);
+eventRoutes.get("/events/:uid/joined", verifyToken_1.verifyToken, events_1.getJoinedEvents);
+eventRoutes.get("/events/:uid/expired", verifyToken_1.verifyToken, events_1.getExpiredEvents);
+eventRoutes.post("/events", storageFull_1.storageFull, verifyToken_1.verifyToken, events_1.createEvent);
+eventRoutes.put("/event/update-details", storageFull_1.storageFull, verifyToken_1.verifyToken, events_1.updateEvent);
+eventRoutes.delete("/event/:eid", verifyToken_1.verifyToken, events_1.deleteEvent);
+eventRoutes.patch("/event/start-event", verifyToken_1.verifyToken, events_1.startEvent);
+eventRoutes.patch("/event/end-event", verifyToken_1.verifyToken, events_1.endEvent);
+eventRoutes.patch("/event/join-event", storageFull_1.storageFull, verifyToken_1.verifyToken, events_1.joinEvent);
+eventRoutes.patch("/event/leave-event", verifyToken_1.verifyToken, events_1.leaveEvent);
+exports.default = eventRoutes;
